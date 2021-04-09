@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Code Editor</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css"></link>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+        
+        <script src="script.js"></script>
+
+    </head>
+    <body>
+        <div class="row">
+        <div class="col-sm-11"><h3>Type your code:</h3></div>
+        <div class="col-sm-1">
+        <select id="langSelector">
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C">C</option>
+            <option value="CPP">CPP</option>
+            <option value="Java">Java</option>
+        </select>
+        </div>
+        </div>
+
+        <div class="row-sm">
+        <div id="editor"></div>
+        </div>
+
+        <div class="row">
+        <div id="outputBox">OUTPUT: </div>
+        </div>
+
+        <div class="row-sm">
+            <button type="button" class="btn btn-warning" id="compileButton" onclick="initFunction()">Compile</button>
+        </div>
+            
+        <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/dracula");
+            var str1 = "ace/mode/python";
+            var str2 = "ace/mode/javascript";
+            var str3 = "ace/mode/c9search";
+            var str4 = "ace/mode/c_cpp";
+            var str5 = "ace/mode/java";
+            editor.session.setMode(str1);
+            document.getElementById('editor').style.fontSize='17px';
+        </script>
+    </body></html>
